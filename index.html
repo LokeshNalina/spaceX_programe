@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="our-webcoderskull padding-lg">
+        <div class="row">
+            <div class="col-lg-2 col-md-6 col-sm-12" style="padding-right: 0px;padding-left: 30px;">
+                <div class="">
+                    <ul class="row">
+                            <li class="col-12" >
+                                    <div class="cnt-block equal-hight" style="">
+                                        <h6 class="filter_header"><strong>Filter</strong></h6>
+                                        <input type="text" disabled id="year" name="year" placeholder="Lunch year">
+                                        <div class="container" id="Lauch_year_div">
+                                       
+                                        <div class="row" >
+                                                <div class="col-2"></div>
+                                                <div class="col-4"><span class="badge badge-success" data-year="2006">2006</span></div>
+                                                <div class="col-4"><span class="badge badge-success" data-year="2007">2007</span></div>
+                                                <div class="col-2"></div>
+                                            </div>
+                                            <div class="row" >
+                                                    <div class="col-2"></div>
+                                                    <div class="col-4"><span class="badge badge-success" data-year="2008">2008</span></div>
+                                                    <div class="col-4"><span class="badge badge-success" data-year="2009">2009</span></div>
+                                                    <div class="col-2"></div>
+                                                </div>
+                                                <div class="row" >
+                                                        <div class="col-2"></div>
+                                                        <div class="col-4"><span class="badge badge-success" data-year="2010">2010</span></div>
+                                                        <div class="col-4"><span class="badge badge-success" data-year="2011">2011</span></div>
+                                                        <div class="col-2"></div>
+                                                    </div>
+                                                    <div class="row" >
+                                                            <div class="col-2"></div>
+                                                            <div class="col-4"><span class="badge badge-success" data-year="2012">2012</span></div>
+                                                            <div class="col-4"><span class="badge badge-success" data-year="2013">2013</span></div>
+                                                            <div class="col-2"></div>
+                                                        </div>
+                                                        <div class="row" >
+                                                                <div class="col-2"></div>
+                                                                <div class="col-4"><span class="badge badge-success" data-year="2014">2014</span></div>
+                                                                <div class="col-4"><span class="badge badge-success" data-year="2015">2015</span></div>
+                                                                <div class="col-2"></div>
+                                                            </div>
+                                                            <div class="row" >
+                                                                    <div class="col-2"></div>
+                                                                    <div class="col-4"><span class="badge badge-success" data-year="2016">2016</span></div>
+                                                                    <div class="col-4"><span class="badge badge-success" data-year="2017">2017</span></div>
+                                                                    <div class="col-2"></div>
+                                                                </div>
+                                                                <div class="row" >
+                                                                        <div class="col-2"></div>
+                                                                        <div class="col-4"><span class="badge badge-success" data-year="2018">2018</span></div>
+                                                                        <div class="col-4"><span class="badge badge-success" data-year="2019">2019</span></div>
+                                                                        <div class="col-2"></div>
+                                                                    </div>
+                                                                    <div class="row" >
+                                                                            <div class="col-2"></div>
+                                                                            <div class="col-4"><span class="badge badge-success" data-year="2020">2020</span></div>
+                                                                            <div class="col-4"><span class="badge badge-success" data-year="2021">2021</span></div>
+                                                                            <div class="col-2"></div>
+                                                                        </div>
+                                        </div>
+                                        <input type="text" disabled  name="SLaunch" placeholder="Sucessful Launch">
+                                        <div class="container" id="sucessfull_launch">
+                                            <div class="row">
+                                                    <div class="col-2"></div>
+                                                    <div class="col-4"><span class="badge badge-success"data-status="true">True</span></div>
+                                                    <div class="col-4"><span class="badge badge-success" data-status="false">False</span></div>
+                                                    <div class="col-2"></div>
+                                            </div>
+                                        </div>
+                                        <input type="text" disabled  name="SLaunch" placeholder="Sucessful Landing">
+                                        <div class="container" id="Sucessful_landing">
+                                            <div class="row">
+                                                    <div class="col-2"></div>
+                                                    <div class="col-4"><span class="badge badge-success" data-status="true">True</span></div>
+                                                    <div class="col-4"><span class="badge badge-success" data-status="false">False</span></div>
+                                                    <div class="col-2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-6 col-sm-12">
+                    <div class="container" id="userlist">
+                            <ul class="row" id="card__wrapper">
+                                
+                            </ul>
+                        </div>
+            </div>
+        </div>
+      
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+</body>
+
+
+<script>
+ //all init or page load method calls go here
+ 
+function init() {
+$("#card__wrapper").html('');
+let url = "https://api.spaceXdata.com/v3/launches?limit=100",year="",landing="",launch="";
+// let flag_year = 0,flag_land=0,flag_launch=0;
+$("#Lauch_year_div span").each(function(){ // loop through all li
+  if($(this).hasClass("active_year")) { // check if li has active class
+    year = $(this).attr("data-year");    
+  }
+})
+$("#Sucessful_landing span").each(function(){ // loop through all li
+  if($(this).hasClass("active_landing")) { // check if li has active class
+    // console.() // get the value of data-interest attribute
+    landing = $(this).attr("data-status");
+  }
+})
+$("#sucessfull_launch span").each(function(){ // loop through all li
+  if($(this).hasClass("active_launch")) { // check if li has active class
+    launch = $(this).attr("data-status");
+  }
+})
+if(launch){
+    url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+launch;
+}  
+if(launch && landing ){
+    url = 'https://api.spaceXdata.com/v3/launches?limit=100&launch_success='+launch+'&land_success='+landing;
+}
+if(year && landing && launch){
+    url = 'https://api.spaceXdata.com/v3/launches?limit=100&launch_success='+launch+'&land_success='+landing+'&launch_year='+year;
+}
+const config = {
+    'url': url
+};
+fetch(`${config.url}`).then(function(response) {
+    return response.json();
+}).then(function(apiResponse, dataStore) {
+   createGrideView(apiResponse);
+});
+}
+
+
+init();
+
+$("#Lauch_year_div span").click(function(){
+    if($(this).hasClass("active_year")) {
+        $(this).removeClass("active_year");
+    }else{
+        $("#Lauch_year_div span").removeClass("active_year");
+        $(this).addClass("active_year");
+    } 
+    init();
+})
+
+$("#Sucessful_landing span").click(function(){
+    console.log($(this).hasClass("active_landing"),"====");
+    if($(this).hasClass("active_landing")) {
+        $(this).removeClass("active_landing");
+    }else{
+        $("#Sucessful_landing span").removeClass("active_landing");
+        $(this).addClass("active_landing");
+    }
+    
+    init();
+})
+
+$("#sucessfull_launch span").click(function(){
+    if($(this).hasClass("active_landing")) {
+        $(this).removeClass("active_launch");
+    }else{
+        $("#sucessfull_launch span").removeClass("active_launch");
+        $(this).addClass("active_launch");
+    }
+    
+    init();
+})
+//create gride view
+function createGrideView(apiResponse) {
+    
+apiResponse.map(function(apiResponse) {
+    let card__wrapper = '';
+    // console.log(apiResponse,"========apiResponse");
+    card__wrapper  += '<li class="col-12 col-md-6 col-lg-3" ><div class="cnt-block equal-hight" style="">';
+    if(apiResponse.links.mission_patch_small){
+        card__wrapper += '<figure><img src=' + apiResponse.links.mission_patch_small + ' class="img-responsive" alt=""></figure>'  
+    }
+
+     if(apiResponse.mission_name  ){
+        card__wrapper += '<div><h6><a class="missionName">' + apiResponse.mission_name + '</a></h6><br/>';
+    }
+    let mission_id = apiResponse.mission_id,items="";
+    card__wrapper += "<p><strong>Mission Ids:</strong></p><ul class='mission_id_list'>"
+    if(apiResponse.mission_id){ 
+        if(mission_id.length > 0){
+        mission_id.forEach(function(item){
+            items += '<li>' + item + '</li>';            
+        }); 
+        card__wrapper += items + '</ul>'; 
+        }else{
+        card__wrapper += '<li>{Mission Id}</li></ul><br />';
+        }
+    }
+    
+    if(apiResponse.launch_year){
+        card__wrapper += '<p style="margin-top:0px ;margin-bottom:5px;"><strong>Launch Year:</strong>&nbsp;'+apiResponse.launch_year+'</p>';
+    }
+
+    if(apiResponse.launch_success !=  null || apiResponse.launch_success != undefined){
+        card__wrapper += '<p style="margin-top:0px;margin-bottom:5px;"><strong>Suceessful Launch:</strong>&nbsp;'+apiResponse.launch_success+'</p>'; 
+    }
+    if(apiResponse.rocket.first_stage.cores){
+        let landing= apiResponse.rocket.first_stage.cores;
+        landing.forEach(function(item){
+            if(item.land_success){
+                card__wrapper += '<p style="margin-top:0px;margin-bottom:5px;"><strong>Suceessful Landing:</strong>&nbsp;'+item.land_success+'</p>'; 
+
+            }else{
+                card__wrapper += '<p style="margin-top:0px;margin-bottom:5px;"><strong>Suceessful Landing:</strong>&nbsp;{launch_landing}</p>'; 
+
+            }
+
+            
+
+        })
+
+    }   
+    card__wrapper += '</div></div></li>'
+    document.getElementById("card__wrapper").insertAdjacentHTML("beforeend", card__wrapper);
+});
+}
+
+
+
+
+</script>
+
+</html>

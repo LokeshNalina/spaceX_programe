@@ -1,0 +1,230 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+body {
+    margin: 0;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+    background-color: #f5f8fa;
+}
+
+.navbar-laravel {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .04);
+}
+
+.navbar-brand,
+.nav-link,
+.my-form,
+.login-form {
+    font-family: Raleway, sans-serif;
+}
+
+.my-form {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.my-form .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.login-form {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.login-form .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row.heading h2 {
+    color: #fff;
+    font-size: 52.52px;
+    line-height: 95px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 40px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.heading.heading-icon {
+    display: block;
+}
+
+.padding-lg {
+    display: block;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.practice-area.padding-lg {
+    padding-bottom: 55px;
+    padding-top: 55px;
+}
+
+.practice-area .inner {
+    border: 1px solid #999999;
+    text-align: center;
+    margin-bottom: 28px;
+    padding: 40px 25px;
+}
+
+/* .our-webcoderskull .cnt-block:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border: 0;
+} */
+
+.practice-area .inner h3 {
+    color: #3c3c3c;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 0;
+}
+
+.practice-area .inner p {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+.practice-area .inner img {
+    display: inline-block;
+}
+
+.our-webcoderskull .cnt-block {
+    float: left;
+    width: 100%;
+    background: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    border: 2px solid #d5d5d5;
+    margin: 0 0 28px;
+    height: auto;
+    min-height: 415px;
+}
+
+.our-webcoderskull .cnt-block figure {
+    width: 148px;
+    height: 148px;
+    border-radius: 100%;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.our-webcoderskull .cnt-block img {
+    width: 148px;
+    height: 148px;
+    border-radius: 100%;
+}
+
+.our-webcoderskull .cnt-block h3 {
+    color: #2a2a2a;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 6px 0;
+    text-transform: uppercase;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.our-webcoderskull .cnt-block h3 a {
+    text-decoration: none;
+    color: #2a2a2a;
+}
+
+.our-webcoderskull .cnt-block h3 a:hover {
+    color: #337ab7;
+}
+
+.our-webcoderskull .cnt-block p {
+    color: #2a2a2a;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    text-align: left;
+    margin-top:10px;
+}
+
+.our-webcoderskull .cnt-block .follow-us {
+    margin: 20px 0 0;
+}
+
+.our-webcoderskull .cnt-block .follow-us li {
+    display: inline-block;
+    width: auto;
+    margin: 0 5px;
+}
+
+.our-webcoderskull .cnt-block .follow-us li .fa {
+    font-size: 24px;
+    color: #767676;
+}
+
+.our-webcoderskull .cnt-block .follow-us li .fa:hover {
+    color: #025a8e;
+}
+
+.list__wrapper {
+    border: 2px solid #d5d5d5;
+}
+
+#grid_view,
+#list_view {
+    font-style: italic;
+    background-color: gray;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.activePage a {
+    background: #0878fa;
+    color: #fff;
+}
+
+.missionName{
+    float: left;
+    color:#007bff !important;
+}
+.mission_id_list{
+    list-style-type: disc;
+    /* float: left; */
+    margin-left: 20px;
+    margin-top: -10px;
+    text-align: left;
+}
+.filter_header{
+    text-align: left; 
+}
+input[type=text] {
+    width: 100%;
+    /* padding: 12px 20px; */
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #fff;
+    border-bottom: 2px solid #d5d5d5;
+    text-align: center;
+}
+#Lauch_year_div span,#sucessfull_launch span,#Sucessful_landing span{
+    cursor: pointer;
+}
+.active_year,.active_landing,.active_launch{
+    background-color: #035003 !important;
+}
